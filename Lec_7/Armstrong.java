@@ -6,9 +6,8 @@ public class Armstrong {
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         int n= sc.nextInt();
-
         int count=count(n);
-        if(armstrong(n,count)){
+        if(isArm(n,count)){
             System.out.println("Armstrong");
         }
         else{
@@ -23,7 +22,7 @@ public class Armstrong {
         }
         return c;
     }
-    public static boolean armstrong(int n,int count){
+    public static boolean isArm(int n,int count){
         int ans=0;
         int backup=n;
         while (n!=0){
@@ -31,6 +30,7 @@ public class Armstrong {
             ans+=(int)Math.pow(digit,count);
             n=n/10;
         }
-        return ans==backup;
+        return backup==ans;
     }
 }
+
